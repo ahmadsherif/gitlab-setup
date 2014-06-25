@@ -1,0 +1,19 @@
+fileserver_backend:
+  - roots
+  - git
+
+gitfs_remotes:
+  - https://github.com/ahmadsherif/gitlab-formula.git
+  - https://github.com/ahmadsherif/nginx-formula.git
+  - https://github.com/ahmadsherif/postgres-formula.git
+  - https://github.com/ahmadsherif/redis-formula.git
+  - https://github.com/saltstack-formulas/ruby-formula.git
+
+log_level_logfile: all
+log_level: all
+
+reactor:
+  - 'salt/minion/*/start':
+    - /srv/reactor/start.sls
+  - salt/key:
+    - /srv/reactor/start.sls
